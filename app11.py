@@ -1,3 +1,4 @@
+from encodings import utf_8
 from secrets import choice
 from turtle import color
 import streamlit as st
@@ -46,7 +47,7 @@ def main() :
     st.map(df3)
 
     # plotly 라이브러리를 이용한 차트 그리기,
-    df4 = pd.read_csv('data2/prog_languages_data.csv', index_col=0)
+    df4 = pd.read_csv('data2/prog_languages_data.csv',encoding= utf_8 ,index_col=0)
     st.dataframe(df4)
 
     # plotly 의 pie차트
@@ -58,6 +59,9 @@ def main() :
     df4_sorted = df4.sort_values('Sum',ascending=False)
     fig2 = px.bar(df4_sorted, x= 'lang', y= 'Sum')
     st.plotly_chart(fig2)
+
+   
+
 
     
 if __name__ == '__main__' :
