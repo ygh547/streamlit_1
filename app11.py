@@ -7,6 +7,7 @@ import altair as alt
 import plotly.express as px
 
 def main() :
+    
     # 스트림릿에서 제공해주는 차트
     # line_chart, area_chart
 
@@ -37,7 +38,7 @@ def main() :
     # 웹에서 사용할 수 있는 차트 라이브러리 중 Altair 차트
     alt_chart = alt.Chart(data=df2).mark_circle().encode(x= 'petal_length', y= 'petal_width', color = 'species')
     st.altair_chart(alt_chart)
-
+    
     # 스트림릿의 map차트
     df3 = pd.read_csv('data2/location.csv', index_col=0)
     st.dataframe(df3)
